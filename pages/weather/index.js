@@ -1,31 +1,68 @@
 import Chart1 from "@/components/Chart1";
+import { Autocomplete, TextField } from "@mui/material";
+import { useState } from "react";
 
-const dummyData = [
+const dummyDataForOneGraph = {
+    key: 1,
+    xAxis: [{ data: [11, 2, 3] }],
+    series: [{ data: [1, 2, 3] }],
+    width: 400,
+    height: 400
+}
+
+const dummyDataForeThreeCities = [
     {
         key: 1,
-        xAxis: [{ data: [11, 2, 3] }],
-        series: [{ data: [1, 2, 3] }],
-        width: 700,
-        height: 700
+        city: 'Galway',
+        xAxis: [{ data: [110, 2, 3] }],
+        series: [{ data: [10, 2, 3] }],
+        width: 400,
+        height: 400
     },
     {
         key: 2,
-        xAxis: [{ data: [1, 2, 31] }],
+        city: 'Dublin',
+        xAxis: [{ data: [11, 2, 300] }],
         series: [{ data: [1, 2, 3] }],
-        width: 700,
-        height: 700
+        width: 400,
+        height: 400
     },
     {
         key: 3,
-        xAxis: [{ data: [1, 20, 3] }],
+        city: 'Cork',
+        xAxis: [{ data: [11, 20, 3] }],
         series: [{ data: [1, 2, 3] }],
-        width: 700,
-        height: 700
-    }
+        width: 400,
+        height: 400
+    },
 ]
 
+const dummyData = [
+    { label: 'Galway', id: 1 },
+    { label: 'Dublin', id: 2 },
+    { label: 'Cork', id: 3 },
+]
+
+
+
 export default function WeatherHome() {
+    const [graphData, setGraphData] = useState(dummyDataForeThreeCities[0]);
+
     return (
-        <Chart1 data={dummyData}></Chart1>
+        <div>
+            <Chart1 data={[graphData]}></Chart1>
+            <Autocomplete
+                disablePortal
+                options={dummyData}
+                sx={{ width: 300 }}
+                renderInput={(params) => <TextField {...params} label="City" />}
+                onChange={(event, newValue) => {
+                    console.log(`The new value is ${newValue.label}`)
+                    const newDataForGraph = dummyDataForeThreeCities.find((cityData) => (cityData.city === newValue.label));
+                    setGraphData(newDataForGraph);
+                }
+                }
+            />
+        </div>
     );
 }
