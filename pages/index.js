@@ -1,9 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
 import localFont from "next/font/local";
-import styles from "@/styles/Home.module.css";
 import { HomeText } from "@/components/HomeText";
 
+// Fonts imported by default by NextJs
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -17,8 +15,6 @@ const geistMono = localFont({
 
 export default function Home() {
   return (
-    <>
     <HomeText></HomeText>
-    </>
   );
 }
