@@ -2,6 +2,10 @@ import { LineChart } from "@mui/x-charts";
 
 export default function Chart1(props) {
   const currentDate = new Date();
+
+  // console.log("props.data is " + JSON.stringify(props.data));
+
+  if (!Array.isArray(props.data)) return null;
   return (
     <>
       {props.data.map((item) => (
