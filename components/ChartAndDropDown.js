@@ -5,7 +5,9 @@ export function ChartAndDropDown(props) {
 
   return (
     <>
-      <Chart1 data={[props.data.graphData]}></Chart1>
+      <div>
+        <Chart1 data={[props.data.graphData]}></Chart1>
+      </div>
       <Autocomplete
         disablePortal
         options={props.data.dropDownOptions} // options from dropdown
