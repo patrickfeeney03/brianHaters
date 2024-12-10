@@ -4,3 +4,15 @@
     padding: 10px;
     text-align: center;
 }
+
+.one {
+    text-align: center;
+    color: #4A90E2
+}
+
+.para {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    color: #555
+}
