@@ -6,7 +6,6 @@ const width = 650;
 const height = 650;
 
 
-
 const citiesList = [
   { label: 'Galway', id: 1 },
   { label: 'Dublin', id: 2 },
