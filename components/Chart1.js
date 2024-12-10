@@ -29,7 +29,7 @@ export default function Chart1(props) {
           }]}
           yAxis={[{
             label: "Temperature (°C)",
-            min: 0,
+            min: -10,
             max: 50,
           }]}
           series={item.series}
