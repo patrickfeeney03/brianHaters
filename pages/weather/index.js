@@ -5,7 +5,6 @@ import GlobalContext from "../store/globalContext";
 const width = 650;
 const height = 650;
 
-
 const citiesList = [
   { label: 'Galway', id: 1 },
   { label: 'Dublin', id: 2 },
@@ -73,7 +72,8 @@ export default function WeatherHome() {
         dropDownOptions: citiesList,
         cities: dummyDataForeThreeCities,
         setGraph: setGraphData,
-        key: count++
+        key: count++,
+        width: width
       }}></ChartAndDropDown>
     </div>
   );

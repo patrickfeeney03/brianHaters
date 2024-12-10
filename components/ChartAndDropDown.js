@@ -1,7 +1,17 @@
 import { Autocomplete, TextField } from "@mui/material";
 import Chart1 from "./Chart1";
 
+
+
 export function ChartAndDropDown(props) {
+
+  const emptyGraphData = {
+    key: 0,
+    series: [{ data: [] }],
+    width: props.data.width,
+    height: props.data.width
+  };
+
   return (
     <>
       <div>
@@ -15,13 +25,16 @@ export function ChartAndDropDown(props) {
         onChange={(event, newValue) => {
           if (newValue != null) {
             const cities = props.data.cities;
+            let set = 0;
             for (let city of cities) {
               if (city.city.toLowerCase() === newValue.label.toLowerCase()) {
-                
-
                 props.data.setGraph(city);
+                set = 1;
               }
             }
+            
+          } else {
+            props.data.setGraph(emptyGraphData);
           }
         }}
       />

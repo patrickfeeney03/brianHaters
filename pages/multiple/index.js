@@ -69,7 +69,8 @@ export default function MultipleGraphs() {
                     dropDownOptions: citiesList,
                     cities: dummyDataForeThreeCities,
                     setGraph: setGraphData,
-                    key: 1
+                    key: 1,
+                    width: width
                 }}></ChartAndDropDown>
             </div>
             <div>
@@ -78,7 +79,8 @@ export default function MultipleGraphs() {
                     dropDownOptions: citiesList,
                     cities: dummyDataForeThreeCities,
                     setGraph: setGraphData2,
-                    key: 2
+                    key: 2,
+                    width: width
                 }}></ChartAndDropDown>
             </div>
             <div>
@@ -87,7 +89,8 @@ export default function MultipleGraphs() {
                     dropDownOptions: citiesList,
                     cities: dummyDataForeThreeCities,
                     setGraph: setGraphData3,
-                    key: 3
+                    key: 3,
+                    width: width
                 }}></ChartAndDropDown>
             </div>
         </div>
